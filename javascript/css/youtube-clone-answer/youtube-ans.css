@@ -1,0 +1,231 @@
+:root {
+  /* Color */
+  --white-color: #ffffff;
+  --black-color: hsl(240, 8%, 3%);
+  --red-color: #ee1010;
+  --link-text-color: #2f2cd3;
+  --text-color: #f0f4f5;
+  --accent-color: #d49466;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/* Vidio Player */
+
+.player {
+  position: sticky;
+  /* sticky쓸때 어느방향에 고정인지 지정해줘야함 top 0 줌 */
+  top: 0;
+  text-align: center;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* Vidio Info */
+body > .info {
+  padding: var(--padding);
+}
+
+.hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--link-text-color);
+}
+
+.hashtags li {
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+.info .metadata  .titleAndButton .title.clamp {
+      /* title div 안의 표시 행수2행으로 제한하는 설정 
+  webkit line clamp 검색하면 mdn 나옴*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+    transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+    transform: rotate(180deg);
+}
+
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--black-color);
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+}
+
+.actions button i {
+  /* margin 위아래 지정없이 auto 하면 화면 중앙에 자동 마진된다 */
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+
+.actions button i.active {
+  color: var(--link-text-color);
+}
+
+/* Chennel */
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+}
+
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+.upNext {
+  padding: 0 var(--padding);
+}
+
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: gray;
+}
+
+.upNext .item {
+  display: flex;
+}
+
+.upNext .item .img {
+  flex: 1 1 35%;
+  mergin-right: var(--padding);
+}
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .moreBtn {
+height:100%;
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .item .info .title {
+  font-size: var(--font-small);
+}
+.upNext .item .info .name,
+.upNext .item .info .views {
+  font-size: var(--font-small);
+  color: gray;
+}
+
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding) 0;
+    }
+}

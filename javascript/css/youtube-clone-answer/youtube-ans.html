@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="youtube-ans.css">
+    <title>Youtube Clone</title>
+    <script src="./youtube-ans.js" defer></script>
+    <script src="https://kit.fontawesome.com/24237bba93.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
+<!-- 
+fab fa-youtube
+fas fa-search
+fas fa-ellipsis-v
+fas fa-caret-down
+fas fa-thumbs-up
+fas fa-thumbs-down
+fas fa-share
+fas fa-plus
+fab fa-font-awesome-flag 
+-->
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div class="logo">
+                <i class="fab fa-youtube"></i>
+                <span class="title">Youtube</span>
+        </div>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+    <!-- Video -->
+    <section class="player">
+        <video controls src="./video/movie.mp4"></video>
+    </section>
+
+    <div class="infoAndUpNext">
+        <!--Video Info-->
+        <section class="info">
+            <!-- Metadata -->
+            <div class="metadata">
+                <ul class="hashtags">
+                    <li>#TestCoding</li>
+                    <li>#Kwon</li>
+                    <li>#CSS</li>
+                </ul>
+                <div class="titleAndButton">
+                    <span class="title clamp">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus accusamus, mollitia, perferendis sequi porro doloribus non sunt quas voluptatibus unde aut harum provident nihil laborum quae officia adipisci, labore at.
+                    </span>
+                    <button class="moreBtn">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </div>
+                <span class="views">1M views 1 month ago</span>
+            </div>
+            <!-- Actions -->
+                <ul class="actions">
+                    <li><button><i class="fas fa-thumbs-up"></i></button><span>1K</span></li>
+                    <li><button><i class="fas fa-thumbs-down"></i><span>0</span></button></li>
+                    <li><button><i class="fas fa-share"></i><span>Share</span></button></li>
+                    <li><button><i class="fas fa-plus"></i><span>Save</span></button></li>
+                    <li><button><i class="fab fa-font-awesome-flag"></i><span>Report</span></button></li>
+                </ul>
+            <!-- Chennel Discription -->
+            <div class="channel">
+                <div class="metadata">
+                    <img src="./image/image.jpg" alt="">
+                    <div class="info">
+                        <span class="name">Test Coding by Kwon</span>
+                        <span class="subscribers">1M subcribers</span>
+                    </div>
+                </div>
+                <button class="subscribe">
+                    subscribe
+                </button>
+            </div>
+        </section>
+        <serction class="upNext">
+            <span class="title">Up Next</span>
+            <ul>
+                <li class="item">
+                    <div class="img">
+                        <img src="./image/image.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates omnis beatae aperiam ab adipisci hic cupiditate illum cum, ipsum asperiores dolorum id modi laboriosam velit mollitia odio? Dolores deleniti iusto explicabo reiciendis. Illum repellat nesciunt voluptatibus minus aperiam hic ullam ut esse deserunt deleniti corporis quasi sit quam, earum quisquam.</span>
+                        <span class="name">Kwon </span>
+                        <span class="views">82K view</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </li>
+                <li class="item">
+                    <div class="img">
+                        <img class="img" src="./image/image.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates omnis beatae aperiam ab adipisci hic cupiditate illum cum, ipsum asperiores dolorum id modi laboriosam velit mollitia odio? Dolores deleniti iusto explicabo reiciendis. Illum repellat nesciunt voluptatibus minus aperiam hic ullam ut esse deserunt deleniti corporis quasi sit quam, earum quisquam.</span>
+                        <span class="name">Kwon </span>
+                        <span class="views">82K view</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-caret-down"></i>
+                    </button>            </li>
+                <li class="item">
+                    <div class="img">
+                        <img class="img" src="./image/image.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates omnis beatae aperiam ab adipisci hic cupiditate illum cum, ipsum asperiores dolorum id modi laboriosam velit mollitia odio? Dolores deleniti iusto explicabo reiciendis. Illum repellat nesciunt voluptatibus minus aperiam hic ullam ut esse deserunt deleniti corporis quasi sit quam, earum quisquam.</span>
+                        <span class="name">Kwon </span>
+                        <span class="views">82K view</span>
+                    </div>
+                    <button class="moreBtn">
+                        <i class="fas fa-caret-down"></i>
+                    </button>
+                </li>
+            </ul>
+        </serction>
+    </div>
+</body>
+</html>
