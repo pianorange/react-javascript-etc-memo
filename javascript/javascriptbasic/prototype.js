@@ -6,7 +6,7 @@ function Person1(name, first, second, third) {
     this.name = name;
     this.first = first;
     this.second = second;
-    sum: function() {
+    sum = function () {
         return this.first + this.second + this.third;
     }
 }
