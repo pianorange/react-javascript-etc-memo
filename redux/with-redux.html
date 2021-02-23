@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js"></script>
+</head>
+<body>
+
+    <style>
+        .container{
+            border:5px solid black;
+            padding: 10px;
+        }
+
+    </style>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+
+    <script>
+
+        //2.reducer 작성 
+        //기존의 state값, action 을 파라메터로 받아 store의 state를 수정하는 역할
+        function reducer (state, action) {
+
+            console.log(state, action);
+            //state가 선언되있지 않으니까 초기화 단계
+            if(state === undefined){
+                return {color:'yellow'}
+            }
+
+            if(action.type === 'CHANGE_COLOR'){
+            //immutable 때문에 새state는 원본 복사해서 수정뒤 건내는 방식사용
+            newState = Object.assign({}, state, {color: action.color});
+            }
+
+            return newState;
+        }
+
+            //1. store 작성 파라메터로 reducer먹임
+            //이때 store는 전역변수로 선언해서 어디서든 사용가능하도록 함
+                var store = Redux.createStore(
+                    reducer,
+                    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+                    window.__REDUX_DEVTOOLS_EXTENSION__()
+                );
+
+
+        //3. store의 값은 getState()로 취득
+        //state 수정하기 위해 갖고있는 state취득
+        console.log(store.getState());
+
+
+        function red() {
+            var state = store.getState();
+            document.querySelector('#red').innerHTML = `
+            <div class="container" id="component_red" style="background-color:${state.color}">
+                <h1>red</h1>
+                <input type="button" value="fire" onclick="
+                   store.dispatch({type:'CHANGE_COLOR', color:'red'});
+                ">
+            </div>        
+            `;
+        }
+        
+        store.subscribe(red);
+        red();
+
+        function blue() {
+            var state = store.getState();
+            document.querySelector('#blue').innerHTML = `
+            <div class="container" id="component_blue" style="background-color:${state.color}">
+                <h1>blue</h1>
+                <input type="button" value="fire" onclick="
+                   store.dispatch({type:'CHANGE_COLOR', color:'blue'});
+                ">
+            </div>        
+            `;
+        }
+        
+        store.subscribe(blue);
+        blue();
+
+        function green() {
+            var state = store.getState();
+            document.querySelector('#green').innerHTML = `
+            <div class="container" id="component_green" style="background-color:${state.color}">
+                <h1>green</h1>
+                <input type="button" value="fire" onclick="
+                   store.dispatch({type:'CHANGE_COLOR', color:'green'});
+                ">
+            </div>        
+            `;
+        }
+        
+        store.subscribe(green);
+        green();
+
+
+    </script>
+
+
+    
+</body>
+</html>
+
