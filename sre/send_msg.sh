@@ -23,12 +23,9 @@ fi
 
 # 텔레그램 봇 정보
 ID="soonhari_bot"
-API_TOKEN="1879303391:AAEI-cBi2ntYR2aM8YK92OMICVGG_xbYYkw"
-URL="https://api.telegram.org/bot${API_TOKEN}/sendMessage"
-
- https://api.telegram.org/bot
- 1879303391:AAEI-cBi2ntYR2aM8YK92OMICVGG_xbYYkw/sendMessage
- 1879303391:AAEI-cBi2ntYR2aM8YK92OMICVGG_xbYYkw
+API_TOKEN=""
+URL="
+ 
 
 # 날짜
 DATE="$(date "+%Y-%m-%d %H:%M")"
