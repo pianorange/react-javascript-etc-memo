@@ -41,4 +41,3 @@ curl -s -d "chat_id=${ID}&text=${TEXT}" ${URL} > /dev/null
 
 
 
-#
